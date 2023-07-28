@@ -1,0 +1,14 @@
+
+.footBox {
+    width: 100%; 
+    background-color: #38117e;
+    padding: 1%;
+    text-align: center;
+    color: #FFF;
+    font-size: 1vw;
+}
+
+.contactUs {
+    font-size: 1.5vw;
+    margin-bottom: 6px;
+}

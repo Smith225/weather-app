@@ -1,0 +1,48 @@
+
+.difWeather {
+    width: 100%;
+}
+
+.homeBox {
+    position: absolute;
+    top: 8em;
+    left: 38%;
+    width: 25%;
+    border: solid 1px brown;
+    border-radius: 10px;
+    text-align: center;
+    padding: 1% 2%; 
+    font-size: 1.5vw;
+    background-color: rgba(222, 184, 135, 0.9)
+}
+
+.heading {
+    font-size: 2vw;
+}
+
+.inputField {
+    display: inline-block;
+    width: 55%;
+    margin-left: 5%;
+    font-size: 1vw;
+}
+
+.subButton {
+    text-decoration: none;
+    display: block;
+    width: 40%;
+    padding: 1% 0;
+    margin: 8% auto;
+    border: solid 1px;
+    border-radius: 10px; 
+    background-color: black;
+    color: #FFF;
+    font-size: 1.3vw;
+}
+
+select {
+    display: inline-block;
+    width: 45%;
+    height: 30px;
+    margin-left: 4%;
+}

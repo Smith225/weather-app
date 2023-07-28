@@ -1,0 +1,28 @@
+
+
+.weatherImg {
+    width: 100%;
+    height: 100vh;
+}
+
+.infoBox {
+    position: absolute;
+    width: 25%;
+    border: solid 1px rgb(15, 157, 60);
+    border-radius: 10px;
+    text-align: center;
+    padding: 1%;
+    top: 18%;
+    left: 37%; 
+    background-color: burlywood;
+}
+
+.property {
+    font-size: 1.5vw;
+    font-weight: 500; 
+    margin-bottom: 0; 
+}
+
+.value {
+    font-size: 1.4vw;
+}
