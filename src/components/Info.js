@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "./Footer.js";
 
 function Info(props) {
 
@@ -15,12 +16,12 @@ function Info(props) {
         iconVal: ""
     });
 
-    const navigate= useNavigate();
+    const navigate = useNavigate();
 
     async function getWeather() {
 
-        const apiKey = "5df2f8951e9041f4ea3341f79f9fa65f";
-
+        const apiKey = process.env.REACT_APP_API_KEY;
+        console.log(apiKey);
         const url = "http://api.openweathermap.org/geo/1.0/direct?q=" + town + "&appid=" + apiKey;
 
         const response = await fetch(url, {
@@ -29,7 +30,7 @@ function Info(props) {
 
         const weather = await response.json();
 
-        if(weather.length=== 0){
+        if (weather.length === 0) {
             navigate("/");
             alert("Please enter valid city");
         }
@@ -81,36 +82,42 @@ function Info(props) {
             <link rel="stylesheet" src={require("../css/infoStyles.css")}></link>
 
 
+            {details.desc !== "" &&
 
-            <div className="infoBox" >
+                <div>
+                    <div className="infoBox" >
 
-                <p className="property">Weather Description</p>
-                <p className="value">{details.desc}</p>
+                        <p className="property">Weather Description</p>
+                        <p className="value">{details.desc}</p>
 
-                <p className="property">Temperature </p>
-                <p className="value">{details.temp} °C</p>
+                        <p className="property">Temperature </p>
+                        <p className="value">{details.temp} °C</p>
 
-                <p className="property">Humidity</p>
-                <p className="value">{details.hum} %</p>
+                        <p className="property">Humidity</p>
+                        <p className="value">{details.hum} %</p>
 
-                <p className="property">Pressure</p>
-                <p className="value">{details.pressure} hPa</p>
+                        <p className="property">Pressure</p>
+                        <p className="value">{details.pressure} hPa</p>
 
-                <p className="property">Latitude & Longitude</p>
-                <p className="value">{details.lat} and {details.lon}</p>
+                        <p className="property">Latitude & Longitude</p>
+                        <p className="value">{details.lat} and {details.lon}</p>
 
-            </div>
+                    </div>
 
-            <div>
-                
-            {details.iconVal === "01" && <img className="weatherImg" src={require("../gifs/clear.gif")} alt="Weather"></img>}
-            {(details.iconVal === "02" || details.iconVal === "03" || details.iconVal === "04") && <img className="weatherImg" src={require("../gifs/clouds.gif")} alt="Weather"></img>}
-            {(details.iconVal === "09" || details.iconVal === "10") && <img className="weatherImg" src={require("../gifs/rain.gif")} alt="Weather"></img>}
-            {details.iconVal === "11" && <img className="weatherImg" src={require("../gifs/thunder.gif")} alt="Weather"></img>}
-            {details.iconVal === "13" && <img className="weatherImg" src={require("../gifs/snow.gif")} alt="Weather"></img>}
-            {details.iconVal === "50" && <img className="weatherImg" src={require("../gifs/mist.gif")} alt="Weather"></img>}
 
-            </div>
+                    <div>
+
+                        {details.iconVal === "01" && <img className="weatherImg" src={require("../gifs/clear.gif")} alt="Weather"></img>}
+                        {(details.iconVal === "02" || details.iconVal === "03" || details.iconVal === "04") && <img className="weatherImg" src={require("../gifs/clouds.gif")} alt="Weather"></img>}
+                        {(details.iconVal === "09" || details.iconVal === "10") && <img className="weatherImg" src={require("../gifs/rain.gif")} alt="Weather"></img>}
+                        {details.iconVal === "11" && <img className="weatherImg" src={require("../gifs/thunder.gif")} alt="Weather"></img>}
+                        {details.iconVal === "13" && <img className="weatherImg" src={require("../gifs/snow.gif")} alt="Weather"></img>}
+                        {details.iconVal === "50" && <img className="weatherImg" src={require("../gifs/mist.gif")} alt="Weather"></img>}
+
+                    </div>
+                    <Footer />
+                </div>
+            }
 
         </>
     )

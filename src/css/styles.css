@@ -3,46 +3,46 @@
     width: 100%;
 }
 
+.alignBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .homeBox {
     position: absolute;
-    top: 8em;
-    left: 38%;
     width: 25%;
     border: solid 1px brown;
     border-radius: 10px;
     text-align: center;
-    padding: 1% 2%; 
-    font-size: 1.5vw;
-    background-color: rgba(222, 184, 135, 0.9)
+    background-color: rgba(222, 184, 135, 0.9);
+    padding-top: 1%;
+    padding-bottom: 1%;
 }
 
 .heading {
+    font-weight: 500;
     font-size: 2vw;
 }
 
+.nameText {
+    font-size: 1.5vw;
+    margin-bottom: 2%; 
+}
+
 .inputField {
-    display: inline-block;
-    width: 55%;
-    margin-left: 5%;
+    display: block;
     font-size: 1vw;
+    width: 55%;
+    margin: 3% auto 10%;
 }
 
 .subButton {
+    font-size: 1.2vw;
     text-decoration: none;
-    display: block;
-    width: 40%;
-    padding: 1% 0;
-    margin: 8% auto;
-    border: solid 1px;
-    border-radius: 10px; 
-    background-color: black;
+    border: solid 1px brown;
+    border-radius: 8px;
+    padding: 1% 5%; 
+    background-color: #119542;
     color: #FFF;
-    font-size: 1.3vw;
-}
-
-select {
-    display: inline-block;
-    width: 45%;
-    height: 30px;
-    margin-left: 4%;
 }

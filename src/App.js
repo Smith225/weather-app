@@ -8,7 +8,6 @@ import {
 
 import Home from './components/Home';
 import Info from './components/Info';
-import Footer from "./components/Footer";
 
 function App() {
 
@@ -29,7 +28,6 @@ function App() {
 
       </Routes>
 
-      <Footer />
     </Router>
 
     </>

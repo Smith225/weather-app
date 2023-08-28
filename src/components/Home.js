@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import Footer from "./Footer.js";
 
 
 function Home(props) {
@@ -13,23 +14,23 @@ function Home(props) {
         <>
             <link rel="stylesheet" src={require('../css/styles.css')} ></link>
 
-            <div>
+            <div className="alignBox">
 
-                <img className="difWeather" src={require("../images/weather.jpg")} alt="Weather" /> 
+                <img className="difWeather" src={require("../images/weather.jpg")} alt="Weather" />
 
                 <div className="homeBox">
                     <p className="heading">Weather Info</p>
 
-                    <p style={{ fontWeight: "500" }}>Your City : 
-                    
+                    <p className="nameText">Your City</p>
+
                     <input className="inputField" onChange={handleChange} />
-                    
-                    </p>
 
                     <Link className="subButton" to="/info">Submit</Link>
-                </div>
 
+                </div>
             </div>
+
+            <Footer />
         </>
     )
 }
